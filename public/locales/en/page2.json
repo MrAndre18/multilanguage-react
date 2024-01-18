@@ -1,0 +1,6 @@
+{
+  "title": "Page two",
+  "test": "Test component",
+  "lang_en": "Choosed language is english",
+  "lang": "Choosed language is {{lng}}"
+}

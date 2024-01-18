@@ -7,7 +7,7 @@ import './API/i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.Suspense fallback='loading'>
+  <React.Suspense fallback=''>
     <App />
   </React.Suspense>
 );

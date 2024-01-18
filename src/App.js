@@ -1,11 +1,14 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { languages } from './API/languages';
-import logo from './images/logo.svg';
 import './styles/app.scss';
-import { Trans, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
+import PageOne from './pages/PageOne';
+import PageTwo from './pages/PageTwo';
 
 function App() {
   const
-    { t, i18n } = useTranslation()
+    { i18n } = useTranslation()
+
   return (
     <div className="app">
       <div className="languages">
@@ -21,22 +24,19 @@ function App() {
         ))}
       </div>
 
-      <header className="app-header">
-        <img src={logo} className="app-logo" alt="logo" />
-        <p>
-          <Trans i18nKey='description'>
-            Edit <code>src/App.js</code> and save to reload.
-          </Trans>
-        </p>
-        <a
-          className="app-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {t('learn')}
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<PageOne />}
+          />
+
+          <Route
+            path="/page2"
+            element={<PageTwo />}
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
